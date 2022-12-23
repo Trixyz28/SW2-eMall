@@ -1,0 +1,242 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{subfiles}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{float}
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+\geometry{
+    % top=30mm,
+    % left=32mm, right=32mm
+}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+% \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{backcolour}{rgb}{1,1,1}
+
+\lstdefinestyle{mystyle}{
+	language=c,
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{blue},
+	morekeywords={sig,one,lone,set,abstract, extends,all, disj,no,some,fact,pred,run,for},
+	numberstyle=\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=none,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+
+\lstset{style=mystyle}
+
+
+
+\title{Software Engineering 2 - RASD}
+\author{
+  Giulia Huang
+  \and
+  Zheng Maria Yu
+  \and
+  Linda Zhu
+}
+\date{Politecnico di Milano, 2022/23}
+
+\begin{document}
+
+\begin{titlepage}
+\vspace*{2.7cm}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.35]{images/logo.png}
+\end{figure}
+\vspace{0.7em}
+\begin{center}
+	\Large \textbf{Requirement Analysis and Specification Document}
+\end{center}
+\begin{center}
+	\Large \textbf{eMall – e-Mobility for All} 
+\end{center}
+\vspace{0.7em}
+\begin{center}
+	\textbf{Software Engineering 2, 2022/23}
+\end{center}
+\vspace{0.7em}
+\begin{center}
+	\normalsize Giulia Huang, Zheng Maria Yu, Linda Zhu
+\end{center}
+\vspace{6em}
+\begin{center}
+	\normalsize V1.0 2022/12/23
+\end{center}
+\vspace*{\fill}
+\end{titlepage}
+
+\normalsize
+
+
+\newpage
+\tableofcontents
+\newpage
+
+\section{Introduction}
+\subfile{sections/1-Introduction}
+
+
+\newpage
+\section{Overall Description}
+\subfile{sections/2-Overall Description}
+
+\newpage
+\section{Specific Requirements}
+\subfile{sections/3-Specific Requirements}
+
+
+\newpage
+\section{Formal Analysis using Alloy} 
+\subfile{sections/4-Formal Analysis using Alloy}
+
+
+\newpage
+\section{Effort Spent}
+\begin{itemize}
+    \item Giulia Huang {
+    \begin{center}
+\begin{tabular}{| l | c |}
+\hline
+Working Task & Time spent \\
+\hline
+Group discussion on the project plan & 3h  \\
+\hline
+Definition of project goals and scope & 3h  \\
+\hline
+Revision of project goals & 1.5h  \\
+\hline
+Group discussion on Section 2 & 3h  \\
+\hline
+Creation of class diagram & 4h \\
+\hline
+Group discussion on system requirements & 2h \\
+\hline
+Definition of project requirements and assumptions & 5h \\
+\hline
+Group discussion on mappings and constraints & 3h \\
+\hline
+Group discussion on Alloy & 1h \\
+\hline
+Coding for Alloy & 15h \\
+\hline
+Review & 2h \\
+\hline
+Group discussion for the final submission & 2h \\
+\hline
+Total & 44.5h \\
+\hline
+\end{tabular}
+\end{center}
+    }
+    
+    \item Zheng Maria Yu {
+    \begin{center}
+\begin{tabular}{| l | c |}
+\hline
+Working Task & Time spent \\
+\hline
+Group discussion on the project plan & 3h  \\
+\hline
+Definition of purpose and list of relevant terms & 3h  \\
+\hline
+Group discussion on Section 2 & 3h  \\
+\hline
+Definition of scenarios & 5h  \\
+\hline
+Creation of statecharts & 4h  \\
+\hline
+Group discussion on system requirements & 2h \\
+\hline
+Review of goals and requirements & 2h \\
+\hline
+Definition of use cases & 7h \\
+\hline
+Completion of diagrams & 2h \\
+\hline
+Group discussion on mappings and constraints & 3h \\
+\hline
+Group discussion on Alloy & 1h \\
+\hline
+Restructuring the document & 3h \\
+\hline
+Review & 2h \\
+\hline
+Group discussion for the final submission & 2h \\
+\hline
+Total & 42h \\
+\hline
+\end{tabular}
+\end{center}
+    }
+
+\newpage
+\item Linda Zhu {
+    \begin{center}
+\begin{tabular}{| l | c |}
+\hline
+Working Task & Time spent \\
+\hline
+Group discussion on the project plan & 3h  \\
+\hline
+Definition of project scope & 2h  \\
+\hline
+Group discussion on Section 2 & 3h  \\
+\hline
+Definition of product functions and users & 4h  \\
+\hline
+Group discussion on system requirements & 2h \\
+\hline
+Group discussion on mappings and constraints & 3h \\
+\hline
+Definition of sequence diagrams & 6h \\
+\hline
+Completion of diagrams & 2h \\
+\hline
+Group discussion on Alloy & 1h \\
+\hline
+Coding for Alloy & 12h \\
+\hline
+Group discussion for the final submission & 2h \\
+\hline
+Review & 2h \\
+\hline
+Total & 42h \\
+\hline
+\end{tabular}
+\end{center}
+    }
+\end{itemize}
+
+
+\newpage
+\section{References}
+\begin{itemize}
+    \item Project specification: "Assignment R\&DD A.Y. 2022-2023 v3"
+    \item Software Engineering 2 Course slides A.Y. 2022-2023
+\end{itemize}
+
+\end{document}

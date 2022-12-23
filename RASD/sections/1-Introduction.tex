@@ -1,0 +1,260 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../images/}}}
+
+
+
+\begin{document}
+
+\subsection{Purpose}
+% Here we include the goals of the project
+
+In the last years, the high carbon footprint has been a global challenge for its negative environmental impact, since it plays a relevant role in climate change and air pollution. In particular, the transportation sector is one of the primary sources of greenhouse gas emissions due to the combustion of fossil fuels.
+\\
+\\
+Electric mobility represents a solution to alleviate the problem: electric cars require less energy and produce less polluting gas as well. However, people should take into account the charging-related issues when using electric vehicles: they need to find available charging stations, and to consider the charging time of the cars too.
+\\
+\\
+To facilitate the use of electric vehicles, the eMall (e-Mobility for All) system proposes to keep together and to coordinate all the activities that the charging process would require. In fact, The eMall system connects the various providers involved in the activity: e-Mobility Service Providers (eMSPs) aim to help drivers in planning and completing the charging process of their electric vehicles introducing minimal interference and constraints with respect to their daily schedule, while Charging Point Operators (CPOs) manage the changing stations, offer functionalities through their own Charge Point Management System (CPMS), and eventually acquire energy from Distribution System Operators (DSOs).
+\\
+\\
+The present document represents the baseline for the project planning and implementation. Its objective is to analyze the eMall system requirements and to define its application domain, functionalities and use cases. 
+
+
+% \subsubsection*{A.1\hspace{1em}Goals}
+% \addcontentsline{toc}{subsubsection}{\protect\numberline{A.1}Introduction}
+\subsubsection{Goals}
+% Should be prescriptive, and should predicate on the phenomena of the world only
+
+
+% \begin{tabularx}{\textwidth}
+% {| >{\centering\arraybackslash}c 
+%  | >{\raggedright\arraybackslash}X | } 
+\begin{center}
+\begin{longtable}[\textwidth]{| c | p{12cm} | } 
+\hline
+\textbf{Goal} & \textbf{Description} \\
+\hline
+G1 & The system shall allow the users to know the location and the status of charging stations \\ 
+\hline
+G2 & The system shall allow the drivers to book a charge \\
+\hline
+G3 & The system shall allow the drivers to charge the vehicle according to the reservation \\
+% \hline
+% G4 & The system shall allow the drivers to be notified when the charging process is finished \\
+\hline
+G4 & The system shall allow the drivers to pay for the obtained service \\
+\hline
+G5 & The system shall suggest the drivers to charge the vehicle when necessary \\
+% \hline
+% G7 & The system shall allow to know the location and the status of a charging station \\
+% \hline
+% G8 & The system shall allow to start charging a vehicle and monitor the charging process \\
+% \hline
+% G6 & The system shall allow to acquire by the DSOs information on energy \\
+\hline
+G6 & The system shall allow the CPOs to decide the energy source for charging \\
+\hline
+G7 & The system shall allow the CPOs to change the charging cost and the special offers \\
+\hline
+G8 & The system shall allow the CPOs to acquire energy from the DSOs \\
+% \hline
+% G8 & The system shall allow the CPOs to change the charging cost and the special offers \\
+\hline
+\end{longtable}
+\end{center}
+
+
+
+\subsection{Scope}
+% Identifies the product and application domain
+% Include an analysis of the world and of the shared phenomena
+The present document will focus on the analysis of the eMall case, which is composed of the two subsystems eMSP and CPMS. In our application domain, each CPMS is owned by a different CPO. An eMSP can interact with multiple CPOs through uniform APIs, while a CPO can interact with multiple eMSPs and DSOs as well. 
+
+\subsubsection{World Phenomena}
+\begin{center}
+\begin{longtable}{| c | l |} 
+ \hline
+ \textbf{Identifier} & \textbf{Description} \\
+ \hline
+ WP1 & People use electric vehicles\\ 
+ \hline
+ WP2 & Electric vehicles have a rechargeable/working battery \\
+ \hline
+ WP3 & Drivers need to charge their vehicle\\ 
+ \hline
+ WP4 & There are available charging stations \\
+ \hline
+ WP5 & Charging stations have enough energy supply \\
+ \hline
+
+\end{longtable}
+\end{center}
+
+\vspace{-3em}
+\subsubsection{Shared Phenomena}
+\hspace{1em}\textbf{- World Controlled Phenomena}
+\vspace{-1em}
+\begin{center}
+\begin{longtable}{| c | l |} 
+ \hline
+ \textbf{Identifier} & \textbf{Description} \\
+ \hline
+ SP1 & User registers an account \\ 
+ \hline
+ SP2 & User logs into his account \\
+ \hline
+ SP3 & User consults information about the charging stations \\
+ \hline
+ SP4 & Driver books a charge in a charging station \\
+ \hline
+ SP5 & Driver starts the charging process in a booked charging station \\
+ \hline
+ SP6 & Driver pays for the obtained service \\
+ \hline
+ SP7 & Operator changes the charging cost \\
+ \hline
+ SP8 & Operator sets a special offer \\
+ \hline
+ SP9 & Operator sets the energy source for charging \\
+ \hline
+ SP10 & Operator acquires energy from the DSOs \\
+ \hline
+\end{longtable}
+\end{center}
+
+\vspace{-2em}
+\textbf{- Machine Controlled Phenomena}
+\begin{center}
+\begin{tabular}{| c | l |} 
+ \hline
+ \textbf{Identifier} & \textbf{Description} \\
+ \hline
+ SP11 & System notifies the user when the charging process finishes \\
+ \hline
+ SP12 & System suggests the user to charge the vehicle \\
+ \hline
+ SP13 & System gives information on the status of a charging station \\
+ \hline
+\end{tabular}
+\end{center}
+
+
+
+
+\subsection{Definitions, acronyms, abbreviations}
+\subsubsection{Definitions}
+\begin{center}
+\begin{longtable}{| l | p{10cm} | } 
+\hline
+\textbf{Definition} & \textbf{Description} \\
+\hline
+Electric vehicle & Vehicle with battery and electric motors for propulsion \\ 
+\hline
+Driver & User of electric vehicles \\ 
+\hline
+Energy & Power used by electric vehicles \\
+\hline
+Charging station & Location where the electric vehicles can be charged, it could have batteries to store energy \\
+\hline
+Charging column & Structure positioned in charging stations to charge electric vehicles. It has a display screen and a charging socket \\
+\hline
+Charging socket & Connector to plug in electric vehicles. There are different types of charging sockets according to the power output, such as slow/fast/rapid \\
+\hline
+Operator & Charging station administrator working for a CPO \\
+\hline
+User & Person using the system, can be a driver or an operator \\
+\hline
+Reservation & Booking made by a driver for charging at a specified time frame \\
+\hline
+\end{longtable}
+\end{center}
+
+\subsubsection{Acronyms}
+\begin{center}
+\begin{longtable}[\textwidth]{| l | l | } 
+\hline
+\textbf{Definition} & \textbf{Description} \\
+\hline
+RASD & Requirements Analysis and Specification Document \\
+\hline
+eMall & e-Mobility for All \\
+\hline
+eMSP & e-Mobility Service Provider \\
+\hline
+CPO & Charging Point Operator \\
+\hline
+CPMS & Charge Point Management System \\
+\hline
+DSO & Distribution System Operator \\
+\hline
+\end{longtable}
+\end{center}
+
+\subsubsection{Abbreviations}
+\begin{center}
+\begin{tabular}{| c | l |} 
+ \hline
+ \textbf{Abbreviation} & \textbf{Description} \\
+ \hline
+ WP & World Phenomena \\
+ \hline
+ SP & Shared Phenomena \\
+ \hline
+ GX & Goal number X \\
+ \hline
+ DX & Domain assumption number X \\
+ \hline
+ RX & Requirement number X \\
+ \hline
+
+\end{tabular}
+\end{center}
+
+
+\subsection{Revision history}
+\begin{itemize}
+    \item V1.0: Initial version
+\end{itemize}
+
+
+\subsection{Reference Documents}
+\begin{itemize}
+    \item Project specification: "Assignment R\&DD A.Y. 2022-2023 v3"
+    \item Software Engineering 2 Course slides A.Y. 2022-2023
+\end{itemize}
+
+
+
+\subsection{Document Structure}
+% Describes contents and structure of the remainder of the RASD
+
+This document is composed of six sections that describe our system in detail: 
+\\
+\\
+The first section consists in an introduction of our project. It starts with a description of the main problem that the system will deal with, the list of goals to achieve and the specification of its scope with various phenomena occurring. In the last part, a list of several definitions and abbreviations is reported for a better understanding of the document.
+\\
+\\
+Section two contains an overall description of our system. It includes several realistic scenarios on the interaction between Users and the System, clarified by state-charts which describe the behavior of system and by a class diagram which offers an overview of the main entities of the system and their relationships. Moreover, there is a list of main functionalities that the system will offer under some domain assumptions, assumed to hold in the world. 
+\\
+\\
+Section three aims to specify the requirements of the system, such as requirements on external interfaces, functional requirements with the defined use cases, and non-functional requirements. Use cases are described and clarified by use case diagrams and sequence diagrams. Section three also contains details on the relationships between functional requirements, the goals of the system and the use cases. Lastly, the design constraints are specified too. 
+\\
+\\
+Section four includes a formal analysis of the system with the use of Alloy. The Alloy code is reported with the description of analysis objectives.
+\\
+\\
+In section five there is a presentation of the project members total effort spent on writing the RASD. 
+\\
+\\
+Section six contains the references used in writing this document. 
+
+
+
+
+
+
+
+
+
+
+\end{document}
