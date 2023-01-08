@@ -1,0 +1,198 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{subfiles}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{float}
+
+\geometry{
+    % top=30mm,
+    % left=32mm, right=32mm
+}
+
+\title{Software Engineering 2 - DD}
+\author{
+  Giulia Huang
+  \and
+  Zheng Maria Yu
+  \and
+  Linda Zhu
+}
+\date{Politecnico di Milano, 2022/23}
+
+\begin{document}
+
+\begin{titlepage}
+\vspace*{2.7cm}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.35]{images/logo.png}
+\end{figure}
+\vspace{0.7em}
+\begin{center}
+	\Large \textbf{Design Document}
+\end{center}
+\begin{center}
+	\Large \textbf{eMall – e-Mobility for All} 
+\end{center}
+\vspace{0.7em}
+\begin{center}
+	\textbf{Software Engineering 2, 2022/23}
+\end{center}
+\vspace{0.7em}
+\begin{center}
+	\normalsize Giulia Huang, Zheng Maria Yu, Linda Zhu
+\end{center}
+\vspace{6em}
+\begin{center}
+	\normalsize V1.0 2023/01/08
+\end{center}
+\vspace*{\fill}
+\end{titlepage}
+
+\normalsize
+
+
+\newpage
+\tableofcontents
+
+\newpage
+\section{Introduction}
+\subfile{sections/1-Introduction}
+
+
+\newpage
+\section{Architectural Design}
+\subfile{sections/2-Architectural Design}
+
+
+\newpage
+\section{User Interface Design}
+\subfile{sections/3-User Interface Design}
+
+\newpage
+\section{Requirements Traceability}
+\subfile{sections/4-Requirements Traceability}
+
+\newpage
+\section{Implementation, Integration and Test Plan}
+\subfile{sections/5-Implementation}
+
+
+\newpage
+\section{Effort Spent}
+\begin{itemize}
+    \item Giulia Huang {
+    \begin{center}
+    \begin{tabular}{| l | c |}
+    \hline
+    Working Task & Time spent \\
+    \hline
+    Group discussions & 7h \\
+    \hline
+    Definition of system architecture & 5h \\
+    \hline
+    Definition of database model & 3h \\
+    \hline
+    Definition of component interfaces & 2h \\
+    \hline
+    Realization of User Interfaces & 10h \\
+    \hline
+    Review of the requirements and components mapping & 1.5h \\
+    \hline
+    Implementation and integration planning & 5h \\
+    \hline
+    Testing planning & 1h \\
+    \hline
+    Final review and restructuring & 3h \\
+    \hline
+    Total & 37.5h \\
+    \hline
+    \end{tabular}
+    \end{center}
+    }
+
+\vspace{3em}
+    \item Zheng Maria Yu {
+    \begin{center}
+    \begin{tabular}{| l | c |}
+    \hline
+    Working Task & Time spent \\
+    \hline
+    Group discussions & 7h \\
+    \hline
+    Document organization & 1.5h \\
+    \hline
+    Definition of system architecture & 8h \\
+    \hline
+    Definition of database model & 1h \\
+    \hline
+    Realization of Runtime Views & 8h \\
+    \hline
+    Definition of component interfaces & 6h \\
+    \hline
+    Review of the requirements and components mapping & 1h \\
+    \hline
+    Implementation and integration planning & 1h \\
+    \hline
+    Final review and restructuring & 3h \\
+    \hline
+    Total & 36.5h \\
+    \hline
+    \end{tabular}
+    \end{center}
+    }
+
+\newpage
+    \item Linda Zhu {
+    \begin{center}
+    \begin{tabular}{| l | c |}
+    \hline
+    Working Task & Time spent \\
+    \hline
+    Group discussions & 7h \\
+    \hline
+    Definition of system architecture & 6h \\
+    \hline
+    Definition of database model & 1h \\
+    \hline
+    Definition of Deployment View & 4h \\
+    \hline
+    Realization of Runtime Views & 4h \\
+    \hline
+    Realization of Requirements Traceability & 5h \\
+    \hline
+    Review of the requirements and components mapping & 1.5h \\
+    \hline
+    Definition of component interfaces & 3h \\
+    \hline
+    Implementation and integration planning & 1h \\
+    \hline
+    Final review and restructuring & 3h \\
+    \hline
+    Total & 35.5h \\
+    \hline
+    \end{tabular}
+    \end{center}
+    }
+\end{itemize}
+
+
+\newpage
+\section{References}
+\begin{itemize}
+    \item Project specification: "Assignment R\&DD A.Y. 2022-2023 v3"
+    \item Software Engineering 2 Course slides A.Y. 2022-2023
+    \item RASD V1.0 of the eMall system
+    \item IEEE Guide for Developing System Requirements Specifications
+    \item Java EE Technical Documentation
+    \item JAX-RX API Specification
+\end{itemize}
+
+
+\end{document}

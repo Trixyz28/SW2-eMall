@@ -1,0 +1,133 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../images/}}}
+
+\begin{document}
+
+\subsection{Purpose}
+In the last years, the high carbon footprint has been a global challenge for its negative environmental impact, since it plays a relevant role in climate change and air pollution. In particular, the transportation sector is one of the primary sources of greenhouse gas emissions due to the combustion of fossil fuels.
+\\
+\\
+Electric mobility represents a solution to alleviate the problem: electric cars require less energy and produce less polluting gas as well. However, people should take into account the charging-related issues when using electric vehicles: they need to find available charging stations, and to consider the charging time of the cars too.
+\\
+\\
+To facilitate the use of electric vehicles, the eMall (e-Mobility for All) system proposes to keep together and to coordinate all the activities that the charging process would require. In fact, The eMall system connects the various providers involved in the activity: e-Mobility Service Providers (eMSPs) help the drivers in planning and completing the charging process of their electric vehicles introducing minimal interference and constraints with respect to their daily schedule, while Charging Point Operators (CPOs) manage the changing stations, offer functionalities through their own Charge Point Management System (CPMS), and eventually acquire energy from Distribution System Operators (DSOs).
+\\
+\\
+This document aims to introduce the overall design of the system, focusing on both architectural aspects with the description of components, interfaces and interactions, and the user interfaces as well. It is considered the basis for the development of the system, and it also proposes a plan for implementation, integration and testing activities. 
+
+
+\subsection{Scope}
+The present document will focus on the analysis of the eMall system design, which adopts a 3-tier architecture consisting of a presentation tier, an application logic tier and a data tier. Moreover, a particular attention is given to the two component subsystems eMSP and CPMS and to their interactions. 
+
+
+\subsection{Definitions, Acronyms, Abbreviations}
+\subsubsection{Definitions}
+\vspace{-1em}
+\begin{center}
+\begin{longtable}{| l | p{10cm} | } 
+\hline
+\textbf{Definition} & \textbf{Description} \\
+\hline
+Electric vehicle & Vehicle with battery and electric motors for propulsion \\ 
+\hline
+Driver & User of electric vehicles \\ 
+\hline
+Energy & Power used by electric vehicles \\
+\hline
+Charging station & Location where the electric vehicles can be charged, it could have batteries to store energy \\
+\hline
+Charging column & Structure positioned in charging stations to charge electric vehicles. It has a display screen and a charging socket \\
+\hline
+Charging socket & Connector to plug in electric vehicles. There are different types of charging sockets according to the power output, such as slow/fast/rapid \\
+\hline
+Operator & Charging station administrator working for a CPO \\
+\hline
+User & Person using the system, can be a driver or an operator \\
+\hline
+Reservation & Booking made by a driver for charging at a specified time frame \\
+\hline
+\end{longtable}
+\end{center}
+
+\vspace{-3em}
+\subsubsection{Acronyms}
+\vspace{-0.5em}
+\begin{center}
+\begin{longtable}[\textwidth]{| l | l | } 
+\hline
+\textbf{Definition} & \textbf{Description} \\
+\hline
+RASD & Requirements Analysis and Specification Document \\
+\hline
+DD & Design Document \\
+\hline
+eMall & e-Mobility for All \\
+\hline
+eMSP & e-Mobility Service Provider \\
+\hline
+CPO & Charging Point Operator \\
+\hline
+CPMS & Charge Point Management System \\
+\hline
+DSO & Distribution System Operator \\
+\hline
+DBMS & Database Management System\\
+\hline
+API & Application Programming Interface\\
+\hline
+\end{longtable}
+\end{center}
+
+\vspace{-3em}
+\subsubsection{Abbreviations}
+\begin{center}
+\begin{tabular}{| c | l |} 
+ \hline
+ \textbf{Abbreviation} & \textbf{Description} \\
+ \hline
+ RX & Requirement number X \\
+ \hline
+\end{tabular}
+\end{center}
+
+\subsection{Revision history}
+\begin{itemize}
+    \item V1.0: Initial version
+\end{itemize}
+
+\subsection{Reference Documents}
+\begin{itemize}
+    \item Project specification: "Assignment R\&DD A.Y. 2022-2023 v3"
+    \item Software Engineering 2 Course slides A.Y. 2022-2023
+    \item RASD of the eMall system V1.0
+\end{itemize}
+
+
+\subsection{Document Structure}
+This document is composed of seven sections described as follows:
+\\
+\\
+Section one consists in a general introduction to our project with the required background information.
+\\
+\\
+Section two focuses on the architecture of the system. An overview on architectural choices and system components is given, followed by the component diagram, the description of each component and the details of the interfaces. The system infrastructure is defined by the deployment diagram, and the dynamics of the interactions are shown through sequence diagrams.
+\\
+\\
+Section three presents the user interface of the system through the mockups. 
+\\
+\\
+The requirements traceability matrix is reported in Section four. It shows the mapping between the system requirements and the designed components, making sure that all the requirements are satisfied by the chosen architectural design. 
+\\
+\\
+Section five describes and justifies the plan for implementation, integration and testing activities of the system. 
+\\
+\\
+The presentation of the effort spent by each team member can be found in Section six. The number of hours spent on each activity is reported.
+\\
+\\
+Section seven contains the references used in writing this document.
+
+
+
+
+\end{document}
